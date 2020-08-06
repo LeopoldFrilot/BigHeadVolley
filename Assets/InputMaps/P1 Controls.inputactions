@@ -1,0 +1,55 @@
+{
+    "name": "P1 Controls",
+    "maps": [
+        {
+            "name": "Versus",
+            "id": "fa1b8886-3dbf-4d01-aac3-dd204c33338a",
+            "actions": [
+                {
+                    "name": "Horizontal Movement",
+                    "type": "Button",
+                    "id": "f2c0e8e4-1f85-4ea2-b44b-56375e132a6c",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "1D Axis",
+                    "id": "73b9367f-63e0-45de-b352-52558867880e",
+                    "path": "1DAxis",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Horizontal Movement",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "negative",
+                    "id": "86005f19-3d0e-49cd-8c52-9f8fd06bfdec",
+                    "path": "<Keyboard>/a",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Horizontal Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "positive",
+                    "id": "3e1261b6-1b8f-44e4-980d-665dcffc7fd0",
+                    "path": "<Keyboard>/d",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Horizontal Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
