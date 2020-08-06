@@ -31,7 +31,6 @@ public class InputReader : MonoBehaviour, Controls.IPlayerActions
     {
         if (context.started)
         {
-            Debug.Log("Jump");
             PA.SetJump();
         }
     }
@@ -39,7 +38,6 @@ public class InputReader : MonoBehaviour, Controls.IPlayerActions
     public void OnMove(InputAction.CallbackContext context)
     {
         float direction = context.ReadValue<float>();
-        Debug.Log(direction);
         PA.SetMove(context.ReadValue<float>());
     }
 }
