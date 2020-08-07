@@ -1,11 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Ball : MonoBehaviour
 {
     [SerializeField] float standardBounceDampening;
-    [SerializeField] float playerBounce;
+    [SerializeField] float groundBounceDampening;
+    [SerializeField] float playerPassiveHitStrength;
     Rigidbody2D RB;
     List<Vector2> velocityList = new List<Vector2>();
     Vector2 curVel;
@@ -16,7 +18,7 @@ public class Ball : MonoBehaviour
     {
         RB = GetComponent<Rigidbody2D>();
     }
-    public void Update()
+    public void FixedUpdate()
     {
         velocityList.Add(curVel);
         curVel = RB.velocity;
@@ -27,7 +29,7 @@ public class Ball : MonoBehaviour
     {
         if (collision.tag == "Player" && collision.GetComponent<CircleCollider2D>())  // The ball has collided with the player
         {
-            float magnitude = CalculateVelocityMagnitude() + playerBounce;
+            float magnitude = CalculateVelocityMagnitude() + playerPassiveHitStrength;
             float angle = CalculateAngle(collision.transform);
 
             var resultX = magnitude * Mathf.Cos(angle);
@@ -39,13 +41,18 @@ public class Ball : MonoBehaviour
 
             RB.velocity = new Vector2(resultX, resultY);
         }
-        else if (collision.tag == "Horizontal Boundaries") // The ball has collided with the net, ground, or forcefields
+        else if (collision.tag == "Horizontal Boundaries") // The ball has collided with forcefields
         {
             RB.velocity = new Vector2(AveVelocity.x * standardBounceDampening, AveVelocity.y * standardBounceDampening * -1);
         }
-        else if (collision.tag == "Vertical Boundaries") // The ball has collided with the net, ground, or forcefields
+        else if (collision.tag == "Vertical Boundaries") // The ball has collided with the net or forcefields
         {
             RB.velocity = new Vector2(AveVelocity.x * standardBounceDampening * -1, AveVelocity.y * standardBounceDampening);
+        }
+        else if (collision.tag == "Ground")
+        {
+            RB.velocity = new Vector2(AveVelocity.x * groundBounceDampening, AveVelocity.y * groundBounceDampening * -1);
+            StartCoroutine(AwardPoints());
         }
     }
     void UpdateVelocityList()
@@ -74,6 +81,10 @@ public class Ball : MonoBehaviour
         float yDist = Mathf.Abs(transform.position.y - collisionTrans.position.y);
         return Mathf.Atan(yDist / xDist);
     }
-
+    IEnumerator AwardPoints()
+    {
+        yield return new WaitForSeconds(2f);
+        FindObjectOfType<SceneSwitcher>().ReloadScene();
+    }
     public Vector2 AveVelocity { get => _aveVelocity; private set => _aveVelocity = value; }
 }

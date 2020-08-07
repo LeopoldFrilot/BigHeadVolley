@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Horizontal Boundaries
   - Vertical Boundaries
+  - Ground
   layers:
   - Default
   - TransparentFX

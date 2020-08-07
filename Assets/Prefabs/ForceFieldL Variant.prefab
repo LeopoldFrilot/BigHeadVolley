@@ -10,7 +10,7 @@ PrefabInstance:
     - target: {fileID: 844341386, guid: 801127f1342c8394db5d9a5ad5b02041, type: 3}
       propertyPath: m_Material
       value: 
-      objectReference: {fileID: 6200000, guid: 9b7e17943d48a20428436a173c62204a, type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 4901396238055663040, guid: 801127f1342c8394db5d9a5ad5b02041, type: 3}
       propertyPath: m_LocalPosition.x
       value: -9.45
@@ -58,6 +58,10 @@ PrefabInstance:
     - target: {fileID: 4901396238055663041, guid: 801127f1342c8394db5d9a5ad5b02041, type: 3}
       propertyPath: m_Name
       value: ForceFieldL
+      objectReference: {fileID: 0}
+    - target: {fileID: 4901396238055663041, guid: 801127f1342c8394db5d9a5ad5b02041, type: 3}
+      propertyPath: m_TagString
+      value: Vertical Boundaries
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 801127f1342c8394db5d9a5ad5b02041, type: 3}
