@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class Ball : MonoBehaviour
 {
-    [SerializeField] float standardBounceDampening;
-    [SerializeField] float groundBounceDampening;
-    [SerializeField] float playerPassiveHitStrength;
+    [SerializeField] [Range(0, 2)] float standardBounceDampening;
+    [SerializeField] [Range(0, 2)] float groundBounceDampening;
+    [SerializeField] [Range(6, 10)] float playerPassiveHitStrength;
+    [SerializeField] [Range(0, 1)] float momentumScalar;
     Rigidbody2D RB;
     List<Vector2> velocityList = new List<Vector2>();
     Vector2 curVel;
@@ -23,12 +24,12 @@ public class Ball : MonoBehaviour
         curVel = RB.velocity;
         UpdateVelocityList();
     }
-
-    public void OnTriggerEnter2D(Collider2D collision)
+    public void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.tag == "Player" && collision.GetComponent<CircleCollider2D>())  // The ball has collided with the player
+        var objectHit = collision.gameObject;
+        if (objectHit.tag == "Player")  // The ball has collided with the player
         {
-            float magnitude = CalculateVelocityMagnitude() + playerPassiveHitStrength;
+            float magnitude = Mathf.Pow(CalculateVelocityMagnitude(), momentumScalar) + playerPassiveHitStrength;
             float angle = CalculateAngle(collision.transform);
 
             var resultX = magnitude * Mathf.Cos(angle);
@@ -40,20 +41,21 @@ public class Ball : MonoBehaviour
 
             RB.velocity = new Vector2(resultX, resultY);
         }
-        else if (collision.tag == "Horizontal Boundaries") // The ball has collided with forcefields
+        else if (objectHit.tag == "Horizontal Boundaries") // The ball has collided with forcefields
         {
             RB.velocity = new Vector2(AveVelocity.x * standardBounceDampening, AveVelocity.y * standardBounceDampening * -1);
         }
-        else if (collision.tag == "Vertical Boundaries") // The ball has collided with the net or forcefields
+        else if (objectHit.tag == "Vertical Boundaries") // The ball has collided with the net or forcefields
         {
             RB.velocity = new Vector2(AveVelocity.x * standardBounceDampening * -1, AveVelocity.y * standardBounceDampening);
         }
-        else if (collision.tag == "Ground")
+        else if (objectHit.tag == "Ground")
         {
             RB.velocity = new Vector2(AveVelocity.x * groundBounceDampening, AveVelocity.y * groundBounceDampening * -1);
             StartCoroutine(AwardPoints());
         }
     }
+    
     void UpdateVelocityList()
     {
         float maxItems = 5f;

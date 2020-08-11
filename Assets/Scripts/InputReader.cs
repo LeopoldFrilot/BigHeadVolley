@@ -10,7 +10,6 @@ public class InputReader : MonoBehaviour, Controls.IPlayerActions
     {
         controls = new Controls();
         controls.Player.SetCallbacks(this); // This script will be able to use Player Action map
-        
     }
     public void Start()
     {

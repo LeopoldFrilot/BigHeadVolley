@@ -340,6 +340,8 @@ GameObject:
   - component: {fileID: 12143941}
   - component: {fileID: 12143939}
   - component: {fileID: 12143940}
+  - component: {fileID: 2818096883385889088}
+  - component: {fileID: 7932745084862774167}
   m_Layer: 8
   m_Name: GenericPlayer
   m_TagString: Player
@@ -411,6 +413,32 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 6
   jumpHeight: 10
+--- !u!114 &2818096883385889088
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3539560233695693998}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6475edfe6f9cbf64e91c820a957be96e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _isGrounded: 0
+  _playerNumber: 0
+--- !u!114 &7932745084862774167
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3539560233695693998}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf3b0299fd38af94e8d5d45a9434ad0a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3539560233726310136
 GameObject:
   m_ObjectHideFlags: 0
