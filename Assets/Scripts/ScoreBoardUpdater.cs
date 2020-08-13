@@ -17,15 +17,18 @@ public class ScoreBoardUpdater : MonoBehaviour
     }
     public void Update()
     {
-        Timer.text = "Time " + Mathf.RoundToInt(Mathf.Clamp(FindObjectOfType<GameTimer>().GameTime, 0, 1000f));
+        ShowTime();
+    }
+
+    void ShowTime()
+    {
+        Timer.text = "Time " + Mathf.CeilToInt(Mathf.Clamp(FindObjectOfType<GameTimer>().GameTime, 0, 1000f));
     }
 
     void PopulatePoints()
     {
         P1Score.text = SceneStatics.P1Points.ToString();
-        Debug.Log(SceneStatics.P1Points.ToString());
         P2Score.text = SceneStatics.P2Points.ToString();
-        Debug.Log(SceneStatics.P2Points.ToString());
     }
     void ShowRound()
     {

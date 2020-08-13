@@ -16,7 +16,6 @@ public class Ball : MonoBehaviour
     List<Vector2> velocityList = new List<Vector2>();
     Vector2 curVel;
     [SerializeField] Vector2 _aveVelocity;
-    [SerializeField] int _playerPossesion;
     Player player1, player2;
     bool awardedPoints = false;
 
@@ -26,8 +25,6 @@ public class Ball : MonoBehaviour
         RB = GetComponent<Rigidbody2D>();
         player1 = FindObjectOfType<GameSetup>().Player1;
         player2 = FindObjectOfType<GameSetup>().Player2;
-        if (FindObjectOfType<MiddleDetector>().IsBallLeftOfNet) PlayerPossesion = 1;
-        else PlayerPossesion = 2;
     }
     public void FixedUpdate()
     {
@@ -38,8 +35,14 @@ public class Ball : MonoBehaviour
     public void OnCollisionEnter2D(Collision2D collision)
     {
         var objectHit = collision.gameObject;
-        if (objectHit.tag == "Player" && objectHit.GetComponent<Player>().NumHits < maxNumHits)  // The ball has collided with the player
+        if (objectHit.tag == "Player")  // The ball has collided with the player
         {
+            FindObjectOfType<GameSetup>().GetOtherPlayer(objectHit.GetComponent<Player>()).NumHits = 0;
+            if (objectHit.GetComponent<Player>().NumHits >= maxNumHits)
+            {
+                EndRound();
+                return;
+            }
             objectHit.GetComponent<Player>().NumHits++;
             float magnitude = Mathf.Pow(CalculateVelocityMagnitude(), momentumScalar) + playerPassiveHitStrength;
             float angle = CalculateAngle(collision.transform);
@@ -75,29 +78,6 @@ public class Ball : MonoBehaviour
         StartCoroutine(AwardPoints());
     }
 
-    public void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.GetComponent<MiddleDetector>())
-        {
-            if (collision.GetComponent<MiddleDetector>().IsBallLeftOfNet)
-            {
-                if (PlayerPossesion == 2) // Possesion switch, reset hits
-                {
-                    player2.NumHits = 0;
-                }
-                PlayerPossesion = 1;
-            }
-            else
-            {
-                if (PlayerPossesion == 1)
-                {
-                    player1.NumHits = 0;
-                }
-                PlayerPossesion = 2;
-            }
-        }
-    }
-
     void UpdateVelocityList()
     {
         float maxItems = 5f;
@@ -126,7 +106,7 @@ public class Ball : MonoBehaviour
     }
     IEnumerator AwardPoints()
     {
-        if (PlayerPossesion == 1)
+        if (FindObjectOfType<MiddleDetector>().IsBallLeftOfNet == true)
         {
             SceneStatics.P2Points++;
             if (SceneStatics.P2Points >= maxPointsPerRound)
@@ -158,7 +138,7 @@ public class Ball : MonoBehaviour
                 }
             }
         }
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1f);
         FindObjectOfType<SceneSwitcher>().ReloadScene();
     }
     public void ResetRound()
@@ -173,5 +153,4 @@ public class Ball : MonoBehaviour
         SceneStatics.P2Wins = 0;
     }
     public Vector2 AveVelocity { get => _aveVelocity; private set => _aveVelocity = value; }
-    public int PlayerPossesion { get => _playerPossesion; set => _playerPossesion = value; }
 }

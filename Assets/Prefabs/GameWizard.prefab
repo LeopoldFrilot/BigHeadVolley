@@ -57,7 +57,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e78c32c48fc679e4b9f1664da9199dd9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxTime: 5
+  maxTime: 30
 --- !u!114 &735000997
 MonoBehaviour:
   m_ObjectHideFlags: 0
