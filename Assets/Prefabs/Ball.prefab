@@ -86,7 +86,10 @@ MonoBehaviour:
   standardBounceDampening: 0.7
   groundBounceDampening: 0.1
   playerPassiveHitStrength: 8
+  momentumScalar: 0.75
+  maxNumHits: 5
   _aveVelocity: {x: 0, y: 0}
+  _playerPossesion: 0
 --- !u!1 &4599426428869071028
 GameObject:
   m_ObjectHideFlags: 0
