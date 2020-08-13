@@ -64,9 +64,17 @@ public class Ball : MonoBehaviour
         else if (objectHit.tag == "Ground")
         {
             RB.velocity = new Vector2(AveVelocity.x * groundBounceDampening, AveVelocity.y * groundBounceDampening * -1);
-            if (awardedPoints == false) StartCoroutine(AwardPoints());
+            if (awardedPoints == false) EndRound();
         }
     }
+
+    public void EndRound()
+    {
+        awardedPoints = true;
+        GetComponent<Collider2D>().enabled = false;
+        StartCoroutine(AwardPoints());
+    }
+
     public void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.GetComponent<MiddleDetector>())
@@ -118,14 +126,12 @@ public class Ball : MonoBehaviour
     }
     IEnumerator AwardPoints()
     {
-        awardedPoints = true;
         if (PlayerPossesion == 1)
         {
             SceneStatics.P2Points++;
             if (SceneStatics.P2Points >= maxPointsPerRound)
             {
                 SceneStatics.P2Wins++;
-                SceneStatics.RoundNum++;
                 if (SceneStatics.P2Wins >= targetWinsPerRound)
                 {
                     ResetGame();
@@ -142,7 +148,6 @@ public class Ball : MonoBehaviour
             if (SceneStatics.P1Points >= maxPointsPerRound)
             {
                 SceneStatics.P1Wins++;
-                SceneStatics.RoundNum++;
                 if (SceneStatics.P1Wins >= targetWinsPerRound)
                 {
                     ResetGame();
@@ -166,7 +171,6 @@ public class Ball : MonoBehaviour
         ResetRound();
         SceneStatics.P1Wins = 0;
         SceneStatics.P2Wins = 0;
-        SceneStatics.RoundNum = 0;
     }
     public Vector2 AveVelocity { get => _aveVelocity; private set => _aveVelocity = value; }
     public int PlayerPossesion { get => _playerPossesion; set => _playerPossesion = value; }

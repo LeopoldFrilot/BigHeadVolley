@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 6826699150052555900}
   - component: {fileID: 2528362960848984091}
+  - component: {fileID: 735000996}
+  - component: {fileID: 735000997}
   m_Layer: 0
   m_Name: GameWizard
   m_TagString: Untagged
@@ -43,3 +45,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91cb6ef8cacb9f443a7f7103db5b4d15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &735000996
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7849094191402681811}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e78c32c48fc679e4b9f1664da9199dd9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxTime: 5
+--- !u!114 &735000997
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7849094191402681811}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47bbfb2a861b10343ba0ba2ba7ca68b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _player1: {fileID: 0}
+  _player2: {fileID: 0}
