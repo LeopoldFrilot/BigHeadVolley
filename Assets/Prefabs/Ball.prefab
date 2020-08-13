@@ -83,11 +83,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47d175725443e9844b5200c9d1d7f5c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  standardBounceDampening: 0.7
+  standardBounceDampening: 0.6
   groundBounceDampening: 0.1
   playerPassiveHitStrength: 8
   momentumScalar: 0.75
   maxNumHits: 5
+  maxPointsPerRound: 5
+  targetWinsPerRound: 2
   _aveVelocity: {x: 0, y: 0}
   _playerPossesion: 0
 --- !u!1 &4599426428869071028

@@ -10,12 +10,15 @@ public class Ball : MonoBehaviour
     [SerializeField] [Range(6, 10)] float playerPassiveHitStrength;
     [SerializeField] [Range(0, 1)] float momentumScalar;
     [SerializeField] [Range(3, 8)] int maxNumHits;
+    [SerializeField] int maxPointsPerRound;
+    [SerializeField] int targetWinsPerRound;
     Rigidbody2D RB;
     List<Vector2> velocityList = new List<Vector2>();
     Vector2 curVel;
     [SerializeField] Vector2 _aveVelocity;
     [SerializeField] int _playerPossesion;
     Player player1, player2;
+    bool awardedPoints = false;
 
 
     public void Start()
@@ -55,13 +58,13 @@ public class Ball : MonoBehaviour
             RB.velocity = new Vector2(AveVelocity.x * standardBounceDampening, AveVelocity.y * standardBounceDampening * -1);
         }
         else if (objectHit.tag == "Vertical Boundaries") // The ball has collided with the net or forcefields
-        { 
+        {
             RB.velocity = new Vector2(AveVelocity.x * standardBounceDampening * -1, AveVelocity.y * standardBounceDampening);
         }
         else if (objectHit.tag == "Ground")
         {
             RB.velocity = new Vector2(AveVelocity.x * groundBounceDampening, AveVelocity.y * groundBounceDampening * -1);
-            StartCoroutine(AwardPoints());
+            if (awardedPoints == false) StartCoroutine(AwardPoints());
         }
     }
     public void OnTriggerExit2D(Collider2D collision)
@@ -115,8 +118,55 @@ public class Ball : MonoBehaviour
     }
     IEnumerator AwardPoints()
     {
+        awardedPoints = true;
+        if (PlayerPossesion == 1)
+        {
+            SceneStatics.P2Points++;
+            if (SceneStatics.P2Points >= maxPointsPerRound)
+            {
+                SceneStatics.P2Wins++;
+                SceneStatics.RoundNum++;
+                if (SceneStatics.P2Wins >= targetWinsPerRound)
+                {
+                    ResetGame();
+                }
+                else
+                {
+                    ResetRound();
+                }
+            }
+        }
+        else
+        {
+            SceneStatics.P1Points++;
+            if (SceneStatics.P1Points >= maxPointsPerRound)
+            {
+                SceneStatics.P1Wins++;
+                SceneStatics.RoundNum++;
+                if (SceneStatics.P1Wins >= targetWinsPerRound)
+                {
+                    ResetGame();
+                }
+                else
+                {
+                    ResetRound();
+                }
+            }
+        }
         yield return new WaitForSeconds(2f);
         FindObjectOfType<SceneSwitcher>().ReloadScene();
+    }
+    public void ResetRound()
+    {
+        SceneStatics.P1Points = 0;
+        SceneStatics.P2Points = 0;
+    }
+    public void ResetGame()
+    {
+        ResetRound();
+        SceneStatics.P1Wins = 0;
+        SceneStatics.P2Wins = 0;
+        SceneStatics.RoundNum = 0;
     }
     public Vector2 AveVelocity { get => _aveVelocity; private set => _aveVelocity = value; }
     public int PlayerPossesion { get => _playerPossesion; set => _playerPossesion = value; }
