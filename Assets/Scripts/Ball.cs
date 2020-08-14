@@ -2,12 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 using PlayerComponents;
+using PlayerComponents.Abilities;
 
 public class Ball : MonoBehaviour
 {
     [SerializeField] [Range(0, 2)] float standardBounceDampening;
     [SerializeField] [Range(0, 2)] float groundBounceDampening;
     [SerializeField] [Range(6, 10)] float playerPassiveHitStrength;
+    [SerializeField] [Range(8, 15)] float playerActiveHitStrength;
     [SerializeField] [Range(0, 1)] float momentumScalar;
     [SerializeField] [Range(3, 8)] int maxNumHits;
     [SerializeField] int maxPointsPerRound;
@@ -40,11 +42,14 @@ public class Ball : MonoBehaviour
             FindObjectOfType<GameSetup>().GetOtherPlayer(objectHit.GetComponent<Player>()).NumHits = 0;
             if (objectHit.GetComponent<Player>().NumHits >= maxNumHits)
             {
-                EndRound();
+                EndPoint();
                 return;
             }
             objectHit.GetComponent<Player>().NumHits++;
-            float magnitude = Mathf.Pow(CalculateVelocityMagnitude(), momentumScalar) + playerPassiveHitStrength;
+            float hitStrength;
+            if (objectHit.GetComponent<ActiveHit>().IsActiveHitting == 1) hitStrength = playerActiveHitStrength;
+            else hitStrength = playerPassiveHitStrength;
+            float magnitude = Mathf.Pow(CalculateVelocityMagnitude(), momentumScalar) + hitStrength;
             float angle = CalculateAngle(collision.transform);
 
             var resultX = magnitude * Mathf.Cos(angle);
@@ -67,11 +72,11 @@ public class Ball : MonoBehaviour
         else if (objectHit.tag == "Ground")
         {
             RB.velocity = new Vector2(AveVelocity.x * groundBounceDampening, AveVelocity.y * groundBounceDampening * -1);
-            if (awardedPoints == false) EndRound();
+            if (awardedPoints == false) EndPoint();
         }
     }
 
-    public void EndRound()
+    public void EndPoint()
     {
         awardedPoints = true;
         GetComponent<Collider2D>().enabled = false;

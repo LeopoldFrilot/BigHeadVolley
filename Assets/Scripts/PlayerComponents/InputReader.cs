@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.InputSystem;
+using PlayerComponents.Abilities;
 
 namespace PlayerComponents
 {
@@ -37,6 +38,11 @@ namespace PlayerComponents
         {
             float direction = context.ReadValue<float>();
             PA.SetMove(context.ReadValue<float>());
+        }
+
+        public void OnActiveHit(InputAction.CallbackContext context)
+        {
+            if (context.started) PA.SetActiveHit();
         }
     }
 }

@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using PlayerComponents;
+using PlayerComponents.Abilities;
 
 public class AIOpponent : MonoBehaviour
 {

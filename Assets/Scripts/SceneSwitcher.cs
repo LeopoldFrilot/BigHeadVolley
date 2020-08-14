@@ -9,6 +9,7 @@ public class SceneSwitcher : MonoBehaviour
     }
     public void ReloadGame()
     {
+        Destroy(FindObjectOfType<Singleton>().gameObject);
         SceneManager.LoadScene(0);
     }
     public void ReloadScene()

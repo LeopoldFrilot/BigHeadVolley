@@ -16,7 +16,7 @@ public class GameTimer : MonoBehaviour
         if (GameTime <= Mathf.Epsilon && ended == false)
         {
             ended = true;
-            FindObjectOfType<Ball>().EndRound();
+            FindObjectOfType<Ball>().EndPoint();
         }
     }
     public float GameTime { get => _time; set => _time = value; }

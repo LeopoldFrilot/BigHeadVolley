@@ -7,9 +7,9 @@ namespace PlayerComponents
     {
         Ball ball;
 
-        [SerializeField] bool _isGrounded;
-        [SerializeField] int _playerNumber;
-        [SerializeField] int _numHits;
+        [SerializeField] bool _isGrounded = false;
+        [SerializeField] int _playerNumber = 0;
+        [SerializeField] int _numHits = 0;
         public void Start()
         {
             ball = FindObjectOfType<Ball>();
