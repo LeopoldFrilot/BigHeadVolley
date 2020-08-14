@@ -156,6 +156,7 @@ public class Ball : MonoBehaviour
         ResetRound();
         SceneStatics.P1Wins = 0;
         SceneStatics.P2Wins = 0;
+        FindObjectOfType<SceneSwitcher>().LoadNextScene();
     }
     public Vector2 AveVelocity { get => _aveVelocity; private set => _aveVelocity = value; }
 }

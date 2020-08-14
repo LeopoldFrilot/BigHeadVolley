@@ -700,7 +700,7 @@ RectTransform:
   m_GameObject: {fileID: 834058428}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 1}
   m_Children:
   - {fileID: 1728651546}
   m_Father: {fileID: 1154244858}
@@ -708,7 +708,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 425}
+  m_AnchoredPosition: {x: 0, y: 465}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &834058430
@@ -1835,12 +1835,20 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 827234813482503134, guid: a0ed6d40d29e8b54bba37d400229e14f, type: 3}
       propertyPath: m_Name
-      value: Next Button
+      value: Exit Button
+      objectReference: {fileID: 0}
+    - target: {fileID: 3021671454501801740, guid: a0ed6d40d29e8b54bba37d400229e14f, type: 3}
+      propertyPath: m_text
+      value: Exit
       objectReference: {fileID: 0}
     - target: {fileID: 7272615503925298390, guid: a0ed6d40d29e8b54bba37d400229e14f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1217918989}
+    - target: {fileID: 7272615503925298390, guid: a0ed6d40d29e8b54bba37d400229e14f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LoadNextScene
+      objectReference: {fileID: 0}
     - target: {fileID: 8082524332719266528, guid: a0ed6d40d29e8b54bba37d400229e14f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -2034,10 +2042,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2087752843, guid: cf0b9cda2a97ea84f83b1281120d5c05, type: 3}
-      propertyPath: cooldown
-      value: 0.5
-      objectReference: {fileID: 0}
     - target: {fileID: 3539560233695693997, guid: cf0b9cda2a97ea84f83b1281120d5c05, type: 3}
       propertyPath: m_LocalPosition.x
       value: -4.47
@@ -2086,8 +2090,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player1
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 9164481727750830398, guid: cf0b9cda2a97ea84f83b1281120d5c05, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cf0b9cda2a97ea84f83b1281120d5c05, type: 3}
 --- !u!1001 &3660395839988091185
 PrefabInstance:
