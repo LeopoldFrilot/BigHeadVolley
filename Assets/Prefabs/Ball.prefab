@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 4599426427442426222}
   - component: {fileID: 4599426427442426223}
   - component: {fileID: 274512280}
-  m_Layer: 11
+  - component: {fileID: 1196701460}
+  m_Layer: 0
   m_Name: Ball
-  m_TagString: Untagged
+  m_TagString: Ball
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -84,14 +85,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   standardBounceDampening: 0.8
-  groundBounceDampening: 0.1
-  playerPassiveHitStrength: 7
-  playerActiveHitStrength: 13
-  momentumScalar: 0.85
-  maxNumHits: 5
-  maxPointsPerRound: 5
-  targetWinsPerRound: 2
-  _aveVelocity: {x: 0, y: 0}
+  groundBounceDampening: 0.5
+--- !u!114 &1196701460
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4599426427442426208}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33af4c20548dfa64e8735caf5af1e258, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  aveVelocity: {x: 0, y: 0}
 --- !u!1 &4599426428869071028
 GameObject:
   m_ObjectHideFlags: 0
@@ -102,7 +109,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4599426428869071027}
   - component: {fileID: 4599426428869071026}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Circle
   m_TagString: Untagged
   m_Icon: {fileID: 0}

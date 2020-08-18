@@ -22,16 +22,16 @@ public class ScoreBoardUpdater : MonoBehaviour
 
     void ShowTime()
     {
-        Timer.text = "Time " + Mathf.CeilToInt(Mathf.Clamp(FindObjectOfType<GameTimer>().GameTime, 0, 1000f));
+        Timer.text = "Time " + Mathf.CeilToInt(Mathf.Clamp(FindObjectOfType<GameTimer>().gameTime, 0, 1000f));
     }
 
     void PopulatePoints()
     {
-        P1Score.text = SceneStatics.P1Points.ToString();
-        P2Score.text = SceneStatics.P2Points.ToString();
+        P1Score.text = SceneStatics.p1Points.ToString();
+        P2Score.text = SceneStatics.p2Points.ToString();
     }
     void ShowRound()
     {
-        RoundTracker.text = "Round " + SceneStatics.RoundNum;
+        RoundTracker.text = "Round " + SceneStatics.GetRoundNum();
     }
 }

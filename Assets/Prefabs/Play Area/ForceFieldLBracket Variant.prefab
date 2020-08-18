@@ -9,15 +9,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6451627515711963836, guid: ba7a33578a81e7b4f8241e59d3171248, type: 3}
       propertyPath: m_Name
-      value: ForceFieldLBracket
+      value: ForceFieldLBracket Variant
       objectReference: {fileID: 0}
     - target: {fileID: 6451627515711963837, guid: ba7a33578a81e7b4f8241e59d3171248, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -8.761
+      value: -8.13
       objectReference: {fileID: 0}
     - target: {fileID: 6451627515711963837, guid: ba7a33578a81e7b4f8241e59d3171248, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.95
+      value: 5.86
       objectReference: {fileID: 0}
     - target: {fileID: 6451627515711963837, guid: ba7a33578a81e7b4f8241e59d3171248, type: 3}
       propertyPath: m_LocalPosition.z
@@ -29,15 +29,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6451627515711963837, guid: ba7a33578a81e7b4f8241e59d3171248, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6451627515711963837, guid: ba7a33578a81e7b4f8241e59d3171248, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.9848078
+      value: 0.17364816
       objectReference: {fileID: 0}
     - target: {fileID: 6451627515711963837, guid: ba7a33578a81e7b4f8241e59d3171248, type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.17364809
+      value: 0.9848078
       objectReference: {fileID: 0}
     - target: {fileID: 6451627515711963837, guid: ba7a33578a81e7b4f8241e59d3171248, type: 3}
       propertyPath: m_RootOrder
@@ -53,11 +53,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6451627515711963837, guid: ba7a33578a81e7b4f8241e59d3171248, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 200
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 6451627515711963837, guid: ba7a33578a81e7b4f8241e59d3171248, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6451627515711963837, guid: ba7a33578a81e7b4f8241e59d3171248, type: 3}
       propertyPath: m_LocalScale.y

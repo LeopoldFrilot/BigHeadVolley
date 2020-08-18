@@ -7,14 +7,14 @@ namespace PlayerComponents.Abilities
         [SerializeField] float speed;
         [SerializeField] float jumpHeight;
         Player player;
-        MiddleDetector MD;
+        Net MD;
         float curDirection;
         Rigidbody2D RB;
         public void Start()
         {
             RB = GetComponent<Rigidbody2D>();
             player = GetComponent<Player>();
-            MD = FindObjectOfType<MiddleDetector>();
+            MD = FindObjectOfType<Net>();
         }
         public void Update()
         {

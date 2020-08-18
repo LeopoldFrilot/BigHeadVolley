@@ -3,17 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using PlayerComponents;
 
-public class GameSetup : MonoBehaviour
+public class PlayerSelect : MonoBehaviour
 {
     [SerializeField] Player _player1;
     [SerializeField] Player _player2;
-    MiddleDetector middle;
+    Net net;
     public void Awake()
     {
-        middle = FindObjectOfType<MiddleDetector>();
+        net = FindObjectOfType<Net>();
         foreach (Player player in FindObjectsOfType<Player>())
         {
-            if (player.transform.position.x < middle.transform.position.x)
+            if (player.transform.position.x < net.transform.position.x)
             {
                 Player1 = player;
                 player.PlayerNumber = 1;

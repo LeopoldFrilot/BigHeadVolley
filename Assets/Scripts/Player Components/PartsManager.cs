@@ -6,13 +6,16 @@ namespace PlayerComponents
 {
     public class PartsManager : MonoBehaviour
     {
-        [SerializeField] Color headColor;
-        [SerializeField] Color bodyColor;
-        [SerializeField] Color legsColor;
         [SerializeField] GameObject head;
         [SerializeField] GameObject body;
         [SerializeField] GameObject legs;
+        Player player;
         public void Start()
+        {
+            player = GetComponent<Player>();
+            LoadPlayerAttributes();
+        }
+        public void LoadPlayerAttributes()
         {
             LoadHead();
             LoadBody();
@@ -20,15 +23,15 @@ namespace PlayerComponents
         }
         void LoadHead()
         {
-            head.GetComponent<SpriteRenderer>().color = headColor;
+            head.GetComponent<SpriteRenderer>().color = player.Card.headColor;
         }
         void LoadBody()
         {
-            body.GetComponent<SpriteRenderer>().color = bodyColor;
+            body.GetComponent<SpriteRenderer>().color = player.Card.bodyColor;
         }
         void LoadLegs()
         {
-            legs.GetComponent<SpriteRenderer>().color = legsColor;
+            legs.GetComponent<SpriteRenderer>().color = player.Card.legsColor;
         }
     }
 }

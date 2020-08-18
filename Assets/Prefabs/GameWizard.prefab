@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 6826699150052555900}
   - component: {fileID: 2528362960848984091}
   - component: {fileID: 735000996}
-  - component: {fileID: 735000997}
+  - component: {fileID: 1410806558}
+  - component: {fileID: 44003023000243488}
   m_Layer: 0
   m_Name: GameWizard
   m_TagString: Untagged
@@ -58,7 +59,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxTime: 30
---- !u!114 &735000997
+  gameTime: 0
+--- !u!114 &1410806558
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -67,7 +69,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 7849094191402681811}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 47bbfb2a861b10343ba0ba2ba7ca68b8, type: 3}
+  m_Script: {fileID: 11500000, guid: c95cceefeae0f8247b3e1d74a0b12413, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxPointsPerSet: 5
+  targetSetsPerMatch: 2
+--- !u!114 &44003023000243488
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7849094191402681811}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 819495bffec2ae14e874898805d43d38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _player1: {fileID: 0}

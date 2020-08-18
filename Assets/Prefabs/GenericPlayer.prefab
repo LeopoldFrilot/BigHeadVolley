@@ -340,11 +340,12 @@ GameObject:
   - component: {fileID: 12143941}
   - component: {fileID: 12143940}
   - component: {fileID: 2818096883385889088}
-  - component: {fileID: 7932745084862774167}
   - component: {fileID: 748119707031506976}
+  - component: {fileID: 2087752843}
+  - component: {fileID: 1635271760}
+  - component: {fileID: 7932745084862774167}
   - component: {fileID: 2821357177045868650}
   - component: {fileID: 1072804023372988898}
-  - component: {fileID: 2087752843}
   m_Layer: 8
   m_Name: GenericPlayer
   m_TagString: Player
@@ -416,21 +417,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6475edfe6f9cbf64e91c820a957be96e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  card: {fileID: 11400000, guid: 52dae5a88a3bb584fba8f1233ca8276a, type: 2}
   _isGrounded: 0
-  _playerNumber: 0
+  _playerNumber: 1
   _numHits: 0
---- !u!114 &7932745084862774167
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3539560233695693998}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bf3b0299fd38af94e8d5d45a9434ad0a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &748119707031506976
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -443,12 +433,51 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8a732f780a47a94cb99cdbd8b494692, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  headColor: {r: 0.086274505, g: 0.10830477, b: 0.67058825, a: 1}
-  bodyColor: {r: 0.41176474, g: 0.47637317, b: 0.8666667, a: 1}
-  legsColor: {r: 0, g: 1, b: 0.7859545, a: 1}
   head: {fileID: 3539560231846144799}
   body: {fileID: 3539560233726310136}
   legs: {fileID: 2064423630683380911}
+--- !u!114 &2087752843
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3539560233695693998}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c9e1a157064d8740a2e42d90e55262b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isActiveHitting: 0
+  cooldown: 1
+--- !u!114 &1635271760
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3539560233695693998}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52b05d9e19c6a834fa803d10f976d849, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerPassiveHitStrength: 8
+  playerActiveHitStrength: 13
+  maxNumHits: 4
+  momentumScalar: 0.8
+--- !u!114 &7932745084862774167
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3539560233695693998}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf3b0299fd38af94e8d5d45a9434ad0a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &2821357177045868650
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -480,21 +509,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &2087752843
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3539560233695693998}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5c9e1a157064d8740a2e42d90e55262b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isActiveHitting: 0
-  cooldown: 1
-  timeTillOffCooldown: 0
 --- !u!1 &3539560233726310136
 GameObject:
   m_ObjectHideFlags: 0
