@@ -380,6 +380,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ff87cdd4dc464648bd2b3b4ff9ae3d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &316473191
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 316473189}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b081945c4de7c554db445543b6a52ca2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioClips:
+  - {fileID: 8300000, guid: 7af01cff44363d74fa1b6d30954a7c7b, type: 3}
+  - {fileID: 8300000, guid: 88cfb4c43fff7e9438397697e00c9e1a, type: 3}
+  - {fileID: 8300000, guid: 550ae38a990a89b419c1a2922154ac65, type: 3}
+  - {fileID: 8300000, guid: e3e231be2b0e1ad45b0271ab13e99dc4, type: 3}
 --- !u!4 &400456267 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8566503944966916790, guid: ab42bfd79a1b90748806e2ee0fd05141, type: 3}
@@ -2269,18 +2286,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4599426427442426222, guid: 1f5097d9e33efd44fb032bd955ece784, type: 3}
-      propertyPath: m_Mass
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4599426427442426222, guid: 1f5097d9e33efd44fb032bd955ece784, type: 3}
-      propertyPath: m_LinearDrag
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4599426427442426222, guid: 1f5097d9e33efd44fb032bd955ece784, type: 3}
-      propertyPath: m_GravityScale
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1f5097d9e33efd44fb032bd955ece784, type: 3}
 --- !u!1001 &4901396237823886665
@@ -2417,6 +2422,10 @@ PrefabInstance:
       propertyPath: m_audioClip
       value: 
       objectReference: {fileID: 8300000, guid: 98e0382d5680d8941b18ac291ddc2ed0, type: 3}
+    - target: {fileID: 7439210758345439162, guid: 96e5a660425fe654bbd1d9b944858bc2, type: 3}
+      propertyPath: m_Volume
+      value: 0.3
+      objectReference: {fileID: 0}
     - target: {fileID: 7439210758345439163, guid: 96e5a660425fe654bbd1d9b944858bc2, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

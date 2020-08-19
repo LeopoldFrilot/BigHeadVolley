@@ -34,10 +34,18 @@ namespace PlayerComponents.Abilities
                 if (GetComponent<ActiveHit>().isActiveHitting == 1)
                 {
                     hitStrength = playerActiveHitStrength;
+                    for (int i= 0; i < 5; i++)
+                    {
+                        FindObjectOfType<SoundPlayer>().PlayDesignatedClip("BallHit2", 1f);
+                    }
                 }
                 else
                 {
                     hitStrength = playerPassiveHitStrength;
+                    for (int i = 0; i < 2; i++)
+                    {
+                        FindObjectOfType<SoundPlayer>().PlayDesignatedClip("BallHit2", 1f);
+                    }
                 }
 
                 float magnitude = Mathf.Pow(ballSpeed.CalculateBallVelocityMagnitude(), momentumScalar) + hitStrength;

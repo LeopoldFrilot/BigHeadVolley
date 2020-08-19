@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3514550035705303905}
   - component: {fileID: 3629257098568185758}
-  m_Layer: 8
+  m_Layer: 13
   m_Name: Legs
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -68,7 +68,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5840971034837122801}
   - component: {fileID: 3798125947087679025}
-  m_Layer: 8
+  m_Layer: 13
   m_Name: Square
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -280,7 +280,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3539560232233485688}
   - component: {fileID: 1767818391}
-  m_Layer: 8
+  m_Layer: 13
   m_Name: Body
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -519,7 +519,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3539560233726310135}
   - component: {fileID: 3539560233726310134}
-  m_Layer: 8
+  m_Layer: 13
   m_Name: Square
   m_TagString: Untagged
   m_Icon: {fileID: 0}
