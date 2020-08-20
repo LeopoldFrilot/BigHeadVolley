@@ -641,7 +641,7 @@ MonoBehaviour:
     two rounds before your opponent. A round is won by scoring 5 points before your
     opponent. A point is won anytime the ball lands on the ground on your opponents
     side, the timer runs out while the ball is on the oppponent's side, or the opponent
-    has hit the ball too many times(6) before sending the ball over the net. Of course,
+    has hit the ball too many times(5) before sending the ball over the net. Of course,
     these rules apply against you as well.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1162,7 +1162,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
