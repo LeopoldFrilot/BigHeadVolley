@@ -1,2 +1,2 @@
 # BigHeadVolley
-Big Head Volley is a silly 2D volleyball game with ridiculous abilities and customizable characters.
+Big Head Volley (BHV) is a silly 2D volleyball game with ridiculous abilities and customizable characters. The core gameplay revolves around a 1v1 game of volleyball. The player customizes his character before each match, including one unique ability. The player then competes against the AI opponent in a Best-of-3 format. The game is designed to be simple enough for anyone to play, with hidden complexity and skill expression in the movement, ball placement, ability choice, and reaction time.
