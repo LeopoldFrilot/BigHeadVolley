@@ -43,6 +43,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Crowd
+    uniqueID: 2518741341
+    locked: 0
   - name: Net
     uniqueID: 2259736535
     locked: 0

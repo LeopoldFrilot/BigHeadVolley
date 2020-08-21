@@ -7,13 +7,14 @@ public class ScoreBoardUpdater : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI P1Score;
     [SerializeField] TextMeshProUGUI P2Score;
-    [SerializeField] TextMeshProUGUI RoundTracker;
+    [SerializeField] TextMeshProUGUI P1Sets;
+    [SerializeField] TextMeshProUGUI P2Sets;
     [SerializeField] TextMeshProUGUI Timer;
 
     public void Start()
     {
         PopulatePoints();
-        ShowRound();
+        ShowSets();
     }
     public void Update()
     {
@@ -22,7 +23,7 @@ public class ScoreBoardUpdater : MonoBehaviour
 
     void ShowTime()
     {
-        Timer.text = "Time " + Mathf.CeilToInt(Mathf.Clamp(FindObjectOfType<GameTimer>().gameTime, 0, 1000f));
+        Timer.text = Mathf.CeilToInt(Mathf.Clamp(FindObjectOfType<GameTimer>().gameTime, 0, 99f)).ToString();
     }
 
     void PopulatePoints()
@@ -30,8 +31,9 @@ public class ScoreBoardUpdater : MonoBehaviour
         P1Score.text = SceneStatics.p1Points.ToString();
         P2Score.text = SceneStatics.p2Points.ToString();
     }
-    void ShowRound()
+    void ShowSets()
     {
-        RoundTracker.text = "Round " + SceneStatics.GetRoundNum();
+        P1Sets.text = SceneStatics.p1SetWins.ToString();
+        P2Sets.text = SceneStatics.p2SetWins.ToString();
     }
 }

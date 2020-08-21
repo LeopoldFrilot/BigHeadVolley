@@ -64,8 +64,9 @@ namespace PlayerComponents.Abilities
         
         float CalculateAngle(Transform collisionTrans)
         {
-            float xDist = Mathf.Abs(transform.position.x - collisionTrans.position.x);
-            float yDist = Mathf.Abs(transform.position.y - collisionTrans.position.y);
+            Transform head = transform.GetChild(0);
+            float xDist = Mathf.Abs(head.position.x - collisionTrans.position.x);
+            float yDist = Mathf.Abs(head.position.y - collisionTrans.position.y);
             return Mathf.Atan(yDist / xDist);
         }
     }
