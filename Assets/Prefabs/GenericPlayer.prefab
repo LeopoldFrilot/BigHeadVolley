@@ -315,6 +315,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3539560231880947431}
   - component: {fileID: 2086827784}
+  - component: {fileID: 1074489490}
   m_Layer: 8
   m_Name: Head
   m_TagString: Player
@@ -354,6 +355,20 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &1074489490
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3539560231880947432}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f6674641aa2e8045a3a476121e6789e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hitEffect: {fileID: 0}
+  defaultRadius: 0.4
 --- !u!1 &3539560232233485689
 GameObject:
   m_ObjectHideFlags: 0
@@ -431,6 +446,7 @@ GameObject:
   - component: {fileID: 7932745084862774167}
   - component: {fileID: 2821357177045868650}
   - component: {fileID: 1072804023372988898}
+  - component: {fileID: 608474282}
   m_Layer: 8
   m_Name: GenericPlayer
   m_TagString: Player
@@ -594,6 +610,20 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &608474282
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3539560233695693998}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f6674641aa2e8045a3a476121e6789e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hitEffect: {fileID: 2001204582287035725, guid: e1167b2697fabcb4d91d00bb2a009490, type: 3}
+  defaultRadius: 1
 --- !u!1 &3539560233726310136
 GameObject:
   m_ObjectHideFlags: 0

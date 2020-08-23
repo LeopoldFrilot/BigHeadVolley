@@ -28,6 +28,7 @@ public class GameSetMatchManager : MonoBehaviour
                 SceneStatics.p2SetWins++;
                 if (SceneStatics.p2SetWins >= targetSetsPerMatch)
                 {
+                    SceneStatics.winner = 2;
                     WinMatch();
                 }
                 else
@@ -44,6 +45,7 @@ public class GameSetMatchManager : MonoBehaviour
                 SceneStatics.p1SetWins++;
                 if (SceneStatics.p1SetWins >= targetSetsPerMatch)
                 {
+                    SceneStatics.winner = 1;
                     WinMatch();
                 }
                 else

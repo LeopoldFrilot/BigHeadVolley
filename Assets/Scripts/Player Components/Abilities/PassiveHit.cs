@@ -11,16 +11,19 @@ namespace PlayerComponents.Abilities
         [SerializeField] [Range(3, 8)] int maxNumHits;
         [SerializeField] [Range(0, 1)] float momentumScalar;
         Player player;
+        Transform head;
 
         public void Start()
         {
             player = GetComponent<Player>();
+            head = transform.GetChild(0);
         }
         public void OnCollisionEnter2D(Collision2D collision)
         {
             if (collision.gameObject.GetComponent<Ball>())  // The ball has collided with the player
             {
                 var ballSpeed = collision.gameObject.GetComponent<BallSpeed>(); // The ball
+                Transform ballTrans = collision.transform;
                 
                 FindObjectOfType<PlayerSelect>().GetOtherPlayer(player).NumHits = 0;
                 player.NumHits++;
@@ -49,14 +52,26 @@ namespace PlayerComponents.Abilities
                 }
 
                 float magnitude = Mathf.Pow(ballSpeed.CalculateBallVelocityMagnitude(), momentumScalar) + hitStrength;
-                float angle = CalculateAngle(ballSpeed.transform);
+                float angle = CalculateAngle(ballTrans);
 
-                var resultX = magnitude * Mathf.Cos(angle);
-                if (transform.position.x - collision.transform.position.x >= Mathf.Epsilon)
+                float resultX;
+                if (head.position.x - ballTrans.position.x < Mathf.Epsilon)
                 {
-                    resultX *= -1f;
+                    resultX = magnitude * Mathf.Cos(angle);
+                    GetComponent<ParticleSystemPlayer>().StartHitEffect(angle);
+                }
+                else
+                {
+                    resultX = magnitude * Mathf.Cos(angle) * -1f;
+                    GetComponent<ParticleSystemPlayer>().StartHitEffect(Mathf.PI - angle);
+
                 }
                 var resultY = magnitude * Mathf.Sin(angle);
+
+                if (head.position.y - ballTrans.position.y >= Mathf.Epsilon)
+                {
+                    resultY *= -1f;
+                }
 
                 ballSpeed.GetComponent<Rigidbody2D>().velocity = new Vector2(resultX, resultY);
             }
@@ -64,7 +79,6 @@ namespace PlayerComponents.Abilities
         
         float CalculateAngle(Transform collisionTrans)
         {
-            Transform head = transform.GetChild(0);
             float xDist = Mathf.Abs(head.position.x - collisionTrans.position.x);
             float yDist = Mathf.Abs(head.position.y - collisionTrans.position.y);
             return Mathf.Atan(yDist / xDist);
