@@ -10,7 +10,11 @@ public class SceneStatics
     public static int p2SetWins;
     public static int winner;
     public static int GetRoundNum()
-    { 
-        return p1SetWins + p2SetWins + 1; 
+    {
+        return p1SetWins + p2SetWins + 1;
     }
+    // Audience
+    public static int[,] audiencePresence;
+    public static int seed;
+    public static float threshold;
 }

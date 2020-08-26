@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Instructions.unity
     guid: 7ef0165f782bdd441a197d7c5b2ea83b
   - enabled: 1
+    path: Assets/Scenes/Generate Audience.unity
+    guid: 13ce9ad9b500c2844b9addf3f0b65661
+  - enabled: 1
     path: Assets/Scenes/Head Ball Volley Game.unity
     guid: e884f381c167d5449a95ccc4703bee56
   - enabled: 1
