@@ -31,11 +31,11 @@ namespace ProcGen
         }
         public void Update()
         {
-            if (autoUpdate)
+            if (autoUpdate == true)
             {
                 if (timer >= autoUpdateTimer)
                 {
-                    GenerateNewAudience();
+                    //GenerateNewAudience();
                     timer = 0;
                 }
                 timer += Time.deltaTime;

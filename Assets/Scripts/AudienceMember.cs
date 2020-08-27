@@ -4,15 +4,21 @@ using UnityEngine;
 
 public class AudienceMember : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    Animator animator;
+    float time = 0;
+    float randomTime;
+    public void Start()
     {
-        
+        animator = GetComponent<Animator>();
+        randomTime = Random.Range(1f, 10f);
     }
-
-    // Update is called once per frame
-    void Update()
+    public void Update()
     {
-        
+        if (time >= randomTime)
+        {
+            animator.SetTrigger("RandomOffset");
+            time = 0;
+        }
+        time += Time.deltaTime;
     }
 }
