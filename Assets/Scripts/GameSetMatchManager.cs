@@ -59,7 +59,14 @@ public class GameSetMatchManager : MonoBehaviour
 
         if (matchWon)
         {
-            FindObjectOfType<SceneSwitcher>().LoadNextScene();
+            if (SceneStatics.winner == 1)
+            {
+                FindObjectOfType<SceneSwitcher>().LoadWinScreen();
+            }
+            else if (SceneStatics.winner == 2)
+            {
+                FindObjectOfType<SceneSwitcher>().LoadLoseScreen();
+            }
         }
         else
         {

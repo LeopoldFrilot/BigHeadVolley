@@ -12,6 +12,6 @@ namespace PlayerComponents
         public bool IsGrounded { get => _isGrounded; set => _isGrounded = value; }
         public int PlayerNumber { get => _playerNumber; set => _playerNumber = value; }
         public int NumHits { get => _numHits; set => _numHits = value; }
-        public PlayerCard Card { get => card; private set => card = value; }
+        public PlayerCard Card { get => card; set => card = value; }
     }
 }

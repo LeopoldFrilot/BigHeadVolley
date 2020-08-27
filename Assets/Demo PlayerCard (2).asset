@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc691516c979b6548acf8e68dd890539, type: 3}
   m_Name: Demo PlayerCard (2)
   m_EditorClassIdentifier: 
-  headColor: {r: 0.101960786, g: 0.19062237, b: 0.2, a: 1}
-  bodyColor: {r: 0.17254902, g: 0.31764072, b: 0.33333334, a: 1}
-  legsColor: {r: 0.3647059, g: 0.66291815, b: 0.7019608, a: 1}
+  headColor: {r: 0.32796568, g: 0, b: 0.8980392, a: 1}
+  bodyColor: {r: 0.3193021, g: 0.5566038, b: 0.18115878, a: 1}
+  legsColor: {r: 0.99607843, g: 0.79607844, b: 0.7137255, a: 1}
   SpecialAbility: {fileID: 0}

@@ -24,6 +24,10 @@ namespace PlayerComponents.Abilities
             isActiveHitting = Mathf.Clamp(binaryVal, 0, 1);
             // Lag here
         }
+        public float GetCooldownPercentage()
+        {
+            return timeTillOffCooldown / cooldown;
+        }
     }
 }
 

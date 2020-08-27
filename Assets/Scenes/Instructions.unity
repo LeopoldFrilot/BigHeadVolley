@@ -567,7 +567,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameWizard
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 44003023000243488, guid: 0a4c4e3a0f410d04b924e3c365ef4aca, type: 3}
+    - {fileID: 1410806558, guid: 0a4c4e3a0f410d04b924e3c365ef4aca, type: 3}
+    - {fileID: 735000996, guid: 0a4c4e3a0f410d04b924e3c365ef4aca, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 0a4c4e3a0f410d04b924e3c365ef4aca, type: 3}
 --- !u!114 &1217918989 stripped
 MonoBehaviour:
