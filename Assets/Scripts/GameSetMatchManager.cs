@@ -13,7 +13,7 @@ public class GameSetMatchManager : MonoBehaviour
     public void EndPoint()
     {
         if (awardedPoints == true) return;
-        FindObjectOfType<SoundPlayer>().PlayDesignatedClip("Whistle", .5f);
+        FindObjectOfType<SoundPlayer>().PlayDesignatedClip("Whistle", 1f);
         FindObjectOfType<Ball>().gameObject.layer = 12;
         awardedPoints = true;
         StartCoroutine(AwardPoints());

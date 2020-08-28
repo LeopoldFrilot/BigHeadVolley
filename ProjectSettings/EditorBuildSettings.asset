@@ -6,22 +6,22 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Intro.unity
+    path: Assets/Scenes/1_Intro.unity
     guid: a2a40848220621f418dd91992ac8e4cb
   - enabled: 1
-    path: Assets/Scenes/Instructions.unity
+    path: Assets/Scenes/2_Instructions.unity
     guid: 7ef0165f782bdd441a197d7c5b2ea83b
   - enabled: 1
-    path: Assets/Scenes/Generate Audience.unity
+    path: Assets/Scenes/3_Generate Audience.unity
     guid: 13ce9ad9b500c2844b9addf3f0b65661
   - enabled: 1
-    path: Assets/Scenes/Generate Players.unity
+    path: Assets/Scenes/4_Generate Players.unity
     guid: ad99bb824f35988439e3428713e3b8f4
   - enabled: 1
-    path: Assets/Scenes/Head Ball Volley Game.unity
+    path: Assets/Scenes/5_Head Ball Volley Game.unity
     guid: e884f381c167d5449a95ccc4703bee56
   - enabled: 1
-    path: Assets/Scenes/End.unity
+    path: Assets/Scenes/6_End.unity
     guid: 773ea7b5166dbf24da34e01f49afa6b7
   - enabled: 1
     path: Assets/Scenes/Win.unity

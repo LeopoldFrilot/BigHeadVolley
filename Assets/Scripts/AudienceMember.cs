@@ -7,6 +7,7 @@ public class AudienceMember : MonoBehaviour
     Animator animator;
     float time = 0;
     float randomTime;
+
     public void Start()
     {
         animator = GetComponent<Animator>();

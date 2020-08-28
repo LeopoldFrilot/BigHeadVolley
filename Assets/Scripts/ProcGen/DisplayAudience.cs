@@ -14,7 +14,7 @@ namespace ProcGen
         float time = 0;
         public void Start()
         {
-            StartCoroutine(IniDelay());
+            //StartCoroutine(IniDelay());
         }
         public void Update()
         {

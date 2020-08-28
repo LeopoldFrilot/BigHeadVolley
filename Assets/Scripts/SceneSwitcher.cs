@@ -13,38 +13,34 @@ public class SceneSwitcher : MonoBehaviour
     }
     public void ReloadGame()
     {
-        var singleton = FindObjectOfType<Singleton>();
-        if (singleton)
-        {
-            Destroy(singleton.gameObject);
-        }
+        DestroySingletons();
         SceneStatics.winner = 0;
         SceneManager.LoadScene(0);
     }
     public void LoadVersus()
     {
-        SceneManager.LoadScene("Head Ball Volley Game");
+        SceneManager.LoadScene(4);
     }
     public void LoadWinScreen()
     {
-        var singleton = FindObjectOfType<Singleton>();
-        if (singleton)
-        {
-            Destroy(singleton.gameObject);
-        }
+        DestroySingletons();
         SceneManager.LoadScene("Win");
     }
     public void LoadLoseScreen()
     {
-        var singleton = FindObjectOfType<Singleton>();
-        if (singleton)
-        {
-            Destroy(singleton.gameObject);
-        }
+        DestroySingletons();
         SceneManager.LoadScene("Lose");
     }
     public void Quit()
     {
         Application.Quit();
+    }
+    public void DestroySingletons()
+    {
+        var singleton = FindObjectOfType<Singleton>();
+        if (singleton)
+        {
+            Destroy(singleton.gameObject);
+        }
     }
 }
