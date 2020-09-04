@@ -9,6 +9,8 @@ namespace BallComponents
         [SerializeField] [Range(0, 2)] float standardBounceDampening;
         [SerializeField] [Range(0, 2)] float groundBounceDampening;
         Rigidbody2D RB;
+        bool ballPaused = false;
+        Vector3 hangPosition = Vector3.zero;
 
         public void Start()
         {
@@ -17,7 +19,15 @@ namespace BallComponents
         }
         public void Update()
         {
-            
+            if (ballPaused)
+            {
+                if (hangPosition == Vector3.zero) hangPosition = transform.position;
+                transform.position = hangPosition;
+            }
+            else
+            {
+                hangPosition = Vector3.zero;
+            }
         }
         public void OnCollisionEnter2D(Collision2D collision)
         {
@@ -38,6 +48,27 @@ namespace BallComponents
                 RB.velocity = new Vector2(BS.aveVelocity.x * groundBounceDampening, BS.aveVelocity.y * groundBounceDampening * -1);
                 FindObjectOfType<SoundPlayer>().PlayDesignatedClip("BallHit3", 1f);
                 FindObjectOfType<GameSetMatchManager>().EndPoint();
+            }
+        }
+        public void SetBallPaused()
+        {
+            ballPaused = true;
+        }
+        public void SetBallResumed()
+        {
+            ballPaused = false;
+        }
+        public bool IsBallOnYourSide(int player)
+        {
+            if (transform.position.x <= FindObjectOfType<Net>().transform.position.x)
+            {
+                if (player == 1) return true;
+                else return false;
+            }
+            else
+            {
+                if (player == 2) return true;
+                else return false;
             }
         }
     }

@@ -390,17 +390,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 827234813482503134, guid: a0ed6d40d29e8b54bba37d400229e14f, type: 3}
       propertyPath: m_Name
-      value: Quick Start
+      value: Button (1)
       objectReference: {fileID: 0}
     - target: {fileID: 3021671454501801740, guid: a0ed6d40d29e8b54bba37d400229e14f, type: 3}
       propertyPath: m_text
-      value: 'Quick Start
-
-'
+      value: TBD
       objectReference: {fileID: 0}
     - target: {fileID: 7272615503925298390, guid: a0ed6d40d29e8b54bba37d400229e14f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7272615503925298390, guid: a0ed6d40d29e8b54bba37d400229e14f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -1285,10 +1283,14 @@ PrefabInstance:
     - target: {fileID: 7439210758345439162, guid: 96e5a660425fe654bbd1d9b944858bc2, type: 3}
       propertyPath: m_audioClip
       value: 
-      objectReference: {fileID: 8300000, guid: d3e82ad7830bd5443ad660f218ecad03, type: 3}
+      objectReference: {fileID: 8300000, guid: ccb94d060058d9a4983a198d6e5075b9, type: 3}
     - target: {fileID: 7439210758345439162, guid: 96e5a660425fe654bbd1d9b944858bc2, type: 3}
       propertyPath: m_Volume
-      value: 1
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7439210758345439162, guid: 96e5a660425fe654bbd1d9b944858bc2, type: 3}
+      propertyPath: Priority
+      value: 58
       objectReference: {fileID: 0}
     - target: {fileID: 7439210758345439163, guid: 96e5a660425fe654bbd1d9b944858bc2, type: 3}
       propertyPath: m_LocalPosition.x

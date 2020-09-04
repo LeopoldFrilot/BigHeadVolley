@@ -64,6 +64,23 @@ public class PartsSelector : MonoBehaviour
         player.Card.legsColor = Color.black;
         Reload();
     }
+    //Ability
+    public void SetSpike()
+    {
+        Player player = FindObjectOfType<Player>();
+        player.Card.specialAbility = PlayerCard.SpecialAbility.Spike;
+    }
+    public void SetGrowth()
+    {
+        Player player = FindObjectOfType<Player>();
+        player.Card.specialAbility = PlayerCard.SpecialAbility.Growth;
+    }
+    public void SetWarpStrike()
+    {
+        Player player = FindObjectOfType<Player>();
+        player.Card.specialAbility = PlayerCard.SpecialAbility.Warp;
+    }
+
     void Reload()
     {
         Player player = FindObjectOfType<Player>();

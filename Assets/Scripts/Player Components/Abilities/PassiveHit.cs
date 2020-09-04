@@ -73,6 +73,7 @@ namespace PlayerComponents.Abilities
                     resultY *= -1f;
                 }
 
+                ballSpeed.GetComponent<Ball>().SetBallResumed();
                 ballSpeed.GetComponent<Rigidbody2D>().velocity = new Vector2(resultX, resultY);
             }
         }

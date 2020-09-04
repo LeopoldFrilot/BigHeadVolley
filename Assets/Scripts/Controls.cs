@@ -41,6 +41,14 @@ public class @Controls : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""SpecialAbility"",
+                    ""type"": ""Button"",
+                    ""id"": ""4803c3aa-1606-4b75-878d-0658560b45d7"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -98,6 +106,17 @@ public class @Controls : IInputActionCollection, IDisposable
                     ""action"": ""ActiveHit"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c12be211-8e8f-4aa5-bd95-414b5b664d54"",
+                    ""path"": ""<Keyboard>/o"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SpecialAbility"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -109,6 +128,7 @@ public class @Controls : IInputActionCollection, IDisposable
         m_Player_Move = m_Player.FindAction("Move", throwIfNotFound: true);
         m_Player_Jump = m_Player.FindAction("Jump", throwIfNotFound: true);
         m_Player_ActiveHit = m_Player.FindAction("ActiveHit", throwIfNotFound: true);
+        m_Player_SpecialAbility = m_Player.FindAction("SpecialAbility", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -161,6 +181,7 @@ public class @Controls : IInputActionCollection, IDisposable
     private readonly InputAction m_Player_Move;
     private readonly InputAction m_Player_Jump;
     private readonly InputAction m_Player_ActiveHit;
+    private readonly InputAction m_Player_SpecialAbility;
     public struct PlayerActions
     {
         private @Controls m_Wrapper;
@@ -168,6 +189,7 @@ public class @Controls : IInputActionCollection, IDisposable
         public InputAction @Move => m_Wrapper.m_Player_Move;
         public InputAction @Jump => m_Wrapper.m_Player_Jump;
         public InputAction @ActiveHit => m_Wrapper.m_Player_ActiveHit;
+        public InputAction @SpecialAbility => m_Wrapper.m_Player_SpecialAbility;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -186,6 +208,9 @@ public class @Controls : IInputActionCollection, IDisposable
                 @ActiveHit.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnActiveHit;
                 @ActiveHit.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnActiveHit;
                 @ActiveHit.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnActiveHit;
+                @SpecialAbility.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSpecialAbility;
+                @SpecialAbility.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSpecialAbility;
+                @SpecialAbility.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSpecialAbility;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -199,6 +224,9 @@ public class @Controls : IInputActionCollection, IDisposable
                 @ActiveHit.started += instance.OnActiveHit;
                 @ActiveHit.performed += instance.OnActiveHit;
                 @ActiveHit.canceled += instance.OnActiveHit;
+                @SpecialAbility.started += instance.OnSpecialAbility;
+                @SpecialAbility.performed += instance.OnSpecialAbility;
+                @SpecialAbility.canceled += instance.OnSpecialAbility;
             }
         }
     }
@@ -208,5 +236,6 @@ public class @Controls : IInputActionCollection, IDisposable
         void OnMove(InputAction.CallbackContext context);
         void OnJump(InputAction.CallbackContext context);
         void OnActiveHit(InputAction.CallbackContext context);
+        void OnSpecialAbility(InputAction.CallbackContext context);
     }
 }

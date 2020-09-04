@@ -44,5 +44,10 @@ namespace PlayerComponents
         {
             if (context.started) PA.SetActiveHit();
         }
+
+        public void OnSpecialAbility(InputAction.CallbackContext context)
+        {
+            if (context.started) PA.SetSpecialAbility();
+        }
     }
 }

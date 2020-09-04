@@ -60,6 +60,10 @@ namespace PlayerComponents.Abilities
         {
             GetComponent<ActiveHit>().SetActiveHit();
         }
+        public void SetSpecialAbility()
+        {
+            GetComponent<SpecialAbility>().ActivateAbility();
+        }
     }
 }
 

@@ -447,6 +447,7 @@ GameObject:
   - component: {fileID: 2821357177045868650}
   - component: {fileID: 1072804023372988898}
   - component: {fileID: 608474282}
+  - component: {fileID: 3539560233690890737}
   m_Layer: 8
   m_Name: GenericPlayer
   m_TagString: Player
@@ -623,7 +624,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitEffect: {fileID: 2001204582287035725, guid: e1167b2697fabcb4d91d00bb2a009490, type: 3}
-  defaultRadius: 1
+  defaultRadius: 0.8
+--- !u!114 &3539560233690890737
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3539560233695693998}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 187268f88403c5149b8f1da9b99d37ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spikeCD: 4
+  spikeOffset: {x: 1.5, y: 0.3}
+  spikeSFX: {fileID: 8300000, guid: 1487d7a28dc475545916b3a5d1ebafa2, type: 3}
+  growthCD: 15
+  growthSFX: {fileID: 8300000, guid: 2c0cc0eec4ab304438935d354d2ce700, type: 3}
+  warpStrikeCD: 10
+  warpSFX: {fileID: 8300000, guid: 946174908e8b8db458d67e55ff590934, type: 3}
+  warpWindupSFX: {fileID: 8300000, guid: 0a2c98ca40fcba84e88cd417596c0352, type: 3}
 --- !u!1 &3539560233726310136
 GameObject:
   m_ObjectHideFlags: 0

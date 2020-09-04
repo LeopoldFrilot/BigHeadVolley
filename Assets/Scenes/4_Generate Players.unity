@@ -427,7 +427,7 @@ PrefabInstance:
       objectReference: {fileID: 861700352}
     - target: {fileID: 7272615503925298390, guid: a0ed6d40d29e8b54bba37d400229e14f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SetBodyColorGrey
+      value: SetSpike
       objectReference: {fileID: 0}
     - target: {fileID: 7272615503925298390, guid: a0ed6d40d29e8b54bba37d400229e14f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
@@ -1261,7 +1261,7 @@ PrefabInstance:
       objectReference: {fileID: 861700352}
     - target: {fileID: 7272615503925298390, guid: a0ed6d40d29e8b54bba37d400229e14f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SetBodyColorBlack
+      value: SetWarpStrike
       objectReference: {fileID: 0}
     - target: {fileID: 7272615503925298390, guid: a0ed6d40d29e8b54bba37d400229e14f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
@@ -1897,11 +1897,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 827234813482503134, guid: a0ed6d40d29e8b54bba37d400229e14f, type: 3}
       propertyPath: m_Name
-      value: Shrink Ray
+      value: Growth
       objectReference: {fileID: 0}
     - target: {fileID: 3021671454501801740, guid: a0ed6d40d29e8b54bba37d400229e14f, type: 3}
       propertyPath: m_text
-      value: Shrink Ray
+      value: Growth
       objectReference: {fileID: 0}
     - target: {fileID: 7226895973723154474, guid: a0ed6d40d29e8b54bba37d400229e14f, type: 3}
       propertyPath: m_Color.r
@@ -1921,7 +1921,7 @@ PrefabInstance:
       objectReference: {fileID: 861700352}
     - target: {fileID: 7272615503925298390, guid: a0ed6d40d29e8b54bba37d400229e14f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SetBodyColorWhite
+      value: SetGrowth
       objectReference: {fileID: 0}
     - target: {fileID: 7272615503925298390, guid: a0ed6d40d29e8b54bba37d400229e14f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName

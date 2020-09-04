@@ -22,7 +22,6 @@ namespace PlayerComponents.Abilities
         public void AnimationSetActiveHit(int binaryVal)
         {
             isActiveHitting = Mathf.Clamp(binaryVal, 0, 1);
-            // Lag here
         }
         public float GetCooldownPercentage()
         {

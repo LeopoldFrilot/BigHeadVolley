@@ -50,6 +50,10 @@ public class AIOpponent : MonoBehaviour
     }
     void SpecialAct()
     {
+        if (CheckChances(1f))
+        {
+            PA.SetSpecialAbility();
+        }
         if (CheckChances(5f))
         {
             PA.SetActiveHit();

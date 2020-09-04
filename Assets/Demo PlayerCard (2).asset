@@ -15,4 +15,4 @@ MonoBehaviour:
   headColor: {r: 0.32796568, g: 0, b: 0.8980392, a: 1}
   bodyColor: {r: 0.3193021, g: 0.5566038, b: 0.18115878, a: 1}
   legsColor: {r: 0.99607843, g: 0.79607844, b: 0.7137255, a: 1}
-  SpecialAbility: {fileID: 0}
+  specialAbility: 1

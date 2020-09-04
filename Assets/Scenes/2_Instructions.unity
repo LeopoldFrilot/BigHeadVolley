@@ -640,12 +640,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Versus mode can be accessed by clicking "Continue." The goal is to win
-    two rounds before your opponent. A round is won by scoring 5 points before your
-    opponent. A point is won anytime the ball lands on the ground on your opponents
-    side, the timer runs out while the ball is on the oppponent's side, or the opponent
-    has hit the ball too many times(5) before sending the ball over the net. Of course,
-    these rules apply against you as well.
+  m_text: 'Rules: The goal is to win two sets before your opponent can. A set is
+    won by scoring 5 points before your opponent. A point is won anytime the ball
+    lands on the ground on your opponents side, the timer runs out while the ball
+    is on the oppponent''s side, or the opponent has hit the ball too many times(5)
+    before sending the ball over the net. Of course, these rules apply against you
+    as well.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -779,7 +779,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: This game is in VERY early development
+  m_text: This is a game built to learn Procedural Generation and will be submitted
+    to Gameheads
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -890,7 +891,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -180}
+  m_AnchoredPosition: {x: 0, y: -150}
   m_SizeDelta: {x: 1400, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1821147953
@@ -1028,7 +1029,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -373}
+  m_AnchoredPosition: {x: 0, y: -353}
   m_SizeDelta: {x: 1400, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1974761401
@@ -1051,8 +1052,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Eventually there will be special abilities to choose. Stay tuned to the
-    itch.io for more in the coming weeks!
+  m_text: Special abilities can be performed by pressing (O). "Spike" is a short
+    cooldown ability that teleports you to the ball and hits it downwards at high
+    velocity. "Growth" is a long cooldown ability which enlarges your whole body
+    for 5 seconds. "Warp Strike" is a medium cooldown ability which teleports the
+    ball to the opponent's side.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1366,7 +1370,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7272615503925298390, guid: a0ed6d40d29e8b54bba37d400229e14f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7272615503925298390, guid: a0ed6d40d29e8b54bba37d400229e14f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
